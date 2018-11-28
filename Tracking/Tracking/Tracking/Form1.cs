@@ -17,12 +17,12 @@ namespace Tracking
 {
     public partial class Form1 : Form
     {
-        private int rL = 0;
-        private int rU = 100;
+        private int rL = 230;
+        private int rU = 255;
         private int gL = 0;
-        private int gU = 100;
-        private int bL = 150;
-        private int bU = 255;
+        private int gU = 250;
+        private int bL = 0;
+        private int bU = 250;
 
         private VideoSourcePlayer player;
 
