@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.redLower = new System.Windows.Forms.NumericUpDown();
             this.redUpper = new System.Windows.Forms.NumericUpDown();
             this.greenUpper = new System.Windows.Forms.NumericUpDown();
@@ -37,6 +38,8 @@
             this.debugTrackingCB = new System.Windows.Forms.CheckBox();
             this.blobHeight = new System.Windows.Forms.NumericUpDown();
             this.blobWidth = new System.Windows.Forms.NumericUpDown();
+            this.writeTimer = new System.Windows.Forms.Timer(this.components);
+            this.writeInterval = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.redLower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.redUpper)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.greenUpper)).BeginInit();
@@ -45,6 +48,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.blueLower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blobHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blobWidth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.writeInterval)).BeginInit();
             this.SuspendLayout();
             // 
             // redLower
@@ -159,11 +163,41 @@
             0,
             0});
             // 
+            // writeTimer
+            // 
+            this.writeTimer.Enabled = true;
+            this.writeTimer.Interval = 1000;
+            this.writeTimer.Tick += new System.EventHandler(this.writeTimer_Tick);
+            // 
+            // writeInterval
+            // 
+            this.writeInterval.Location = new System.Drawing.Point(968, 2);
+            this.writeInterval.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.writeInterval.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.writeInterval.Name = "writeInterval";
+            this.writeInterval.Size = new System.Drawing.Size(97, 20);
+            this.writeInterval.TabIndex = 9;
+            this.writeInterval.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.writeInterval.ValueChanged += new System.EventHandler(this.writeInterval_ValueChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 743);
+            this.Controls.Add(this.writeInterval);
             this.Controls.Add(this.blobHeight);
             this.Controls.Add(this.blobWidth);
             this.Controls.Add(this.debugTrackingCB);
@@ -187,6 +221,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.blueLower)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.blobHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.blobWidth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.writeInterval)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,6 +238,8 @@
         private System.Windows.Forms.CheckBox debugTrackingCB;
         private System.Windows.Forms.NumericUpDown blobHeight;
         private System.Windows.Forms.NumericUpDown blobWidth;
+        private System.Windows.Forms.Timer writeTimer;
+        private System.Windows.Forms.NumericUpDown writeInterval;
     }
 }
 

@@ -26,6 +26,8 @@ namespace Tracking
 
         private VideoSourcePlayer player;
 
+        private String currentButton = "WAIT";
+
         public Form1()
         {
             InitializeComponent();
@@ -70,13 +72,75 @@ namespace Tracking
 
                 using (Pen p = new Pen(Color.Red, 3))
                 {
-
                     g.DrawEllipse(p, center.X, center.Y, 6, 6);
                 }
 
                 g.Dispose();
+
+                currentButton = GetButton(center);
+            }
+            else
+            {
+                currentButton = "WAIT";
+            }
+
+            Console.WriteLine(currentButton);
+        }
+
+
+
+        private void WriteToFile(string button)
+        {
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"..\..\..\..\..\LuaScripts\input.txt"))
+            {
+                file.Write(button);
             }
         }
+
+        private String GetButton(System.Drawing.Point location)
+        {
+            int x = location.X;
+            int y = location.Y;
+
+            if (isBetween(x, 0, 300) && isBetween(y, 0, 342))
+            {
+                return "Left";
+            }
+            else if (isBetween(x, 300, 600) && isBetween(y, 0, 342))
+            {
+                return "Right";
+            }
+            else if (isBetween(x, 600, 900) && isBetween(y, 0, 342))
+            {
+                return "B";
+            }
+            else if (isBetween(x, 0, 300) && isBetween(y, 342, 720))
+            {
+                return "Up";
+            }
+            else if (isBetween(x, 300, 600) && isBetween(y, 342, 720))
+            {
+                return "Down";
+            }
+            else if (isBetween(x, 600, 900) && isBetween(y, 342, 720))
+            {
+                return "A";
+            }
+            else if (isBetween(x, 900, 1280) && isBetween(y, 342, 533))
+            {
+                return "Start";
+            }
+            else if (isBetween(x, 900, 1280) && isBetween(y, 533, 720))
+            {
+                return "Select";
+            }
+            else
+            {
+                return "WAIT";
+            }
+        }
+
+
 
         private void Setup()
         {
@@ -97,6 +161,11 @@ namespace Tracking
             greenUpper.Value = gU;
             blueLower.Value = bL;
             blueUpper.Value = bU;
+        }
+
+        private bool isBetween(int value, int lower, int upper)
+        {
+            return (value >= lower && value < upper);
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -135,6 +204,18 @@ namespace Tracking
         private void blueUpper_ValueChanged(object sender, EventArgs e)
         {
             bU = (int)blueUpper.Value;
+        }
+
+        private void writeInterval_ValueChanged(object sender, EventArgs e)
+        {
+            writeTimer.Interval = (int)writeInterval.Value;
+        }
+
+        private void writeTimer_Tick(object sender, EventArgs e)
+        {
+            WriteToFile(currentButton);
+
+            Console.WriteLine("Wrote " + currentButton + " to file!");
         }
     }
 }
