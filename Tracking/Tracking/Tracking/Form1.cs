@@ -152,6 +152,7 @@ namespace Tracking
 
             FilterInfoCollection videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             VideoCaptureDevice videoSource = new VideoCaptureDevice(videoDevices[0].MonikerString);
+            videoSource.VideoResolution = videoSource.VideoCapabilities[1];
             player.VideoSource = videoSource;
             player.Start();
 
