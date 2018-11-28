@@ -83,7 +83,6 @@ namespace Tracking
             player = new VideoSourcePlayer();
             player.Location = new System.Drawing.Point(0, 24);
             player.Size = new Size(1280, 720);
-            player.AutoSizeControl = true;
             player.NewFrame += PlayerNewFrame;
             this.Controls.Add(player);
 
