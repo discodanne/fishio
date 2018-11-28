@@ -48,3 +48,4 @@ F:\Projects\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Vision.xml
 F:\Projects\fishio\Tracking\Tracking\Tracking\obj\Debug\Tracking.csproj.CopyComplete
 F:\Projects\fishio\Tracking\Tracking\Tracking\obj\Debug\Tracking.exe
 F:\Projects\fishio\Tracking\Tracking\Tracking\obj\Debug\Tracking.pdb
+F:\Projects\fishio\Tracking\Tracking\Tracking\obj\Debug\Tracking.csprojAssemblyReference.cache

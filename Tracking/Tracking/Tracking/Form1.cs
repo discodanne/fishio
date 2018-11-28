@@ -47,8 +47,8 @@ namespace Tracking
             }
 
             BlobCounter blobCounter = new BlobCounter();
-            blobCounter.MinWidth = 25;
-            blobCounter.MinHeight = 25;
+            blobCounter.MinWidth = (int)blobWidth.Value;
+            blobCounter.MinHeight = (int)blobHeight.Value;
             blobCounter.FilterBlobs = true;
             blobCounter.ObjectsOrder = ObjectsOrder.Size;
 

@@ -35,12 +35,16 @@
             this.blueUpper = new System.Windows.Forms.NumericUpDown();
             this.blueLower = new System.Windows.Forms.NumericUpDown();
             this.debugTrackingCB = new System.Windows.Forms.CheckBox();
+            this.blobHeight = new System.Windows.Forms.NumericUpDown();
+            this.blobWidth = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.redLower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.redUpper)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.greenUpper)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.greenLower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blueUpper)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blueLower)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blobHeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blobWidth)).BeginInit();
             this.SuspendLayout();
             // 
             // redLower
@@ -131,11 +135,37 @@
             this.debugTrackingCB.Text = "Debug?";
             this.debugTrackingCB.UseVisualStyleBackColor = true;
             // 
+            // blobHeight
+            // 
+            this.blobHeight.Location = new System.Drawing.Point(469, 2);
+            this.blobHeight.Name = "blobHeight";
+            this.blobHeight.Size = new System.Drawing.Size(50, 20);
+            this.blobHeight.TabIndex = 8;
+            this.blobHeight.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
+            // 
+            // blobWidth
+            // 
+            this.blobWidth.Location = new System.Drawing.Point(418, 2);
+            this.blobWidth.Name = "blobWidth";
+            this.blobWidth.Size = new System.Drawing.Size(50, 20);
+            this.blobWidth.TabIndex = 7;
+            this.blobWidth.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 743);
+            this.Controls.Add(this.blobHeight);
+            this.Controls.Add(this.blobWidth);
             this.Controls.Add(this.debugTrackingCB);
             this.Controls.Add(this.blueUpper);
             this.Controls.Add(this.blueLower);
@@ -155,6 +185,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.greenLower)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.blueUpper)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.blueLower)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blobHeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blobWidth)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,6 +201,8 @@
         private System.Windows.Forms.NumericUpDown blueUpper;
         private System.Windows.Forms.NumericUpDown blueLower;
         private System.Windows.Forms.CheckBox debugTrackingCB;
+        private System.Windows.Forms.NumericUpDown blobHeight;
+        private System.Windows.Forms.NumericUpDown blobWidth;
     }
 }
 
