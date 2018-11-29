@@ -49,3 +49,53 @@ F:\Projects\fishio\Tracking\Tracking\Tracking\obj\Debug\Tracking.csproj.CopyComp
 F:\Projects\fishio\Tracking\Tracking\Tracking\obj\Debug\Tracking.exe
 F:\Projects\fishio\Tracking\Tracking\Tracking\obj\Debug\Tracking.pdb
 F:\Projects\fishio\Tracking\Tracking\Tracking\obj\Debug\Tracking.csprojAssemblyReference.cache
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\Tracking.exe.config
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\Tracking.exe
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\Tracking.pdb
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Controls.dll
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.DebuggerVisualizers (2010).dll
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.dll
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Fuzzy.dll
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Genetic.dll
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Imaging.dll
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Imaging.Formats.dll
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Imaging.IPPrototyper.dll
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.MachineLearning.dll
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Math.dll
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Neuro.dll
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Robotics.Lego.dll
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Robotics.Surveyor.dll
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Robotics.TeRK.dll
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Video.dll
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Video.FFMPEG.dll
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Video.Kinect.dll
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Video.VFW.dll
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Video.Ximea.dll
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Vision.dll
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.xml
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Controls.xml
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Fuzzy.xml
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Genetic.xml
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Imaging.xml
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Imaging.Formats.xml
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.MachineLearning.xml
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Math.xml
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Neuro.xml
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Robotics.Lego.xml
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Robotics.Surveyor.xml
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Robotics.TeRK.xml
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Video.xml
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Video.FFMPEG.xml
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Video.Kinect.xml
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Video.VFW.xml
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Video.Ximea.xml
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\bin\Debug\AForge.Vision.xml
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\obj\Debug\Tracking.Form1.resources
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\obj\Debug\Tracking.Properties.Resources.resources
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\obj\Debug\Tracking.csproj.GenerateResource.cache
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\obj\Debug\Tracking.csproj.CoreCompileInputs.cache
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\obj\Debug\Tracking.csproj.CopyComplete
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\obj\Debug\Tracking.exe
+C:\Users\50 Cent\Documents\Fishio-Prjoect\fishio\Tracking\Tracking\Tracking\obj\Debug\Tracking.pdb

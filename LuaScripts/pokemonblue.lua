@@ -14,7 +14,6 @@ while true do
 	local line = readFrom(inputFile);
 
 	if line ~= "WAIT" then
-		console.log(line);
 		joypad.set({[line] = true}, null);
 		emu.frameadvance();
 		joypad.set({[line] = false}, null);

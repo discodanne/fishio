@@ -85,6 +85,8 @@ namespace Tracking
             }
 
             Console.WriteLine(currentButton);
+
+            Console.WriteLine(image.Size);
         }
 
 
@@ -152,7 +154,13 @@ namespace Tracking
 
             FilterInfoCollection videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             VideoCaptureDevice videoSource = new VideoCaptureDevice(videoDevices[0].MonikerString);
-            videoSource.VideoResolution = videoSource.VideoCapabilities[1];
+            foreach (VideoCapabilities vc in videoSource.VideoCapabilities)
+            {
+                if (vc.FrameSize.Height == 720)
+                {
+                    videoSource.VideoResolution = vc;
+                }
+            }
             player.VideoSource = videoSource;
             player.Start();
 
