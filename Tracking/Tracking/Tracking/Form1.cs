@@ -24,6 +24,8 @@ namespace Tracking
         private int bL = 0;
         private int bU = 250;
 
+        private int brightnessCorrection = 0;
+
         private Bitmap imgA;
         private Bitmap imgB;
         private Bitmap imgUp;
@@ -49,6 +51,11 @@ namespace Tracking
 
         private void PlayerNewFrame(object sender, ref Bitmap image)
         {
+            BrightnessCorrection brightnessFilter = new BrightnessCorrection(brightnessCorrection);
+            brightnessFilter.ApplyInPlace(image);
+
+
+
             ColorFiltering colorFilter = new ColorFiltering();
             colorFilter.Red = new IntRange(rL, rU);
             colorFilter.Green = new IntRange(gL, gU);
@@ -224,6 +231,7 @@ namespace Tracking
             greenUpper.Value = gU;
             blueLower.Value = bL;
             blueUpper.Value = bU;
+            brightnessCorrectionNUM.Value = brightnessCorrection;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -285,6 +293,9 @@ namespace Tracking
 
         private void randomizerTimer_Tick(object sender, EventArgs e)
         {
+            clockTimer.Stop();
+            clockTimer.Start();
+
             List<ScreenImage> images = new List<ScreenImage>();
 
             for (int i = 0; i < screenImages.Count; i++)
@@ -306,6 +317,16 @@ namespace Tracking
                     s.randomizeImage(images);
                 }
             }
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            brightnessCorrection = (int)brightnessCorrectionNUM.Value;
+        }
+
+        private void clockTimer_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 }
