@@ -40,6 +40,8 @@
             this.blobWidth = new System.Windows.Forms.NumericUpDown();
             this.writeTimer = new System.Windows.Forms.Timer(this.components);
             this.writeInterval = new System.Windows.Forms.NumericUpDown();
+            this.randomizeTime = new System.Windows.Forms.NumericUpDown();
+            this.randomizerTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.redLower)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.redUpper)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.greenUpper)).BeginInit();
@@ -49,6 +51,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.blobHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blobWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.writeInterval)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.randomizeTime)).BeginInit();
             this.SuspendLayout();
             // 
             // redLower
@@ -192,11 +195,42 @@
             0});
             this.writeInterval.ValueChanged += new System.EventHandler(this.writeInterval_ValueChanged);
             // 
+            // randomizeTime
+            // 
+            this.randomizeTime.Location = new System.Drawing.Point(1088, 2);
+            this.randomizeTime.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.randomizeTime.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.randomizeTime.Name = "randomizeTime";
+            this.randomizeTime.Size = new System.Drawing.Size(97, 20);
+            this.randomizeTime.TabIndex = 10;
+            this.randomizeTime.Value = new decimal(new int[] {
+            60000,
+            0,
+            0,
+            0});
+            this.randomizeTime.ValueChanged += new System.EventHandler(this.randomizeTime_ValueChanged);
+            // 
+            // randomizerTimer
+            // 
+            this.randomizerTimer.Enabled = true;
+            this.randomizerTimer.Interval = 60000;
+            this.randomizerTimer.Tick += new System.EventHandler(this.randomizerTimer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1280, 743);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(1280, 740);
+            this.Controls.Add(this.randomizeTime);
             this.Controls.Add(this.writeInterval);
             this.Controls.Add(this.blobHeight);
             this.Controls.Add(this.blobWidth);
@@ -222,6 +256,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.blobHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.blobWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.writeInterval)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.randomizeTime)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,6 +275,8 @@
         private System.Windows.Forms.NumericUpDown blobWidth;
         private System.Windows.Forms.Timer writeTimer;
         private System.Windows.Forms.NumericUpDown writeInterval;
+        private System.Windows.Forms.NumericUpDown randomizeTime;
+        private System.Windows.Forms.Timer randomizerTimer;
     }
 }
 

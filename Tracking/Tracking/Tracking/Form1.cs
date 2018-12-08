@@ -24,6 +24,18 @@ namespace Tracking
         private int bL = 0;
         private int bU = 250;
 
+        private Bitmap imgA;
+        private Bitmap imgB;
+        private Bitmap imgUp;
+        private Bitmap imgDown;
+        private Bitmap imgRight;
+        private Bitmap imgLeft;
+        private Bitmap imgStart;
+        private Bitmap imgSelect;
+
+        private List<ScreenButton> screenButtons = new List<ScreenButton>();
+        private List<ScreenImage> screenImages = new List<ScreenImage>();
+
         private VideoSourcePlayer player;
 
         private String currentButton = "WAIT";
@@ -31,6 +43,7 @@ namespace Tracking
         public Form1()
         {
             InitializeComponent();
+            LoadImages();
             Setup();
         }
 
@@ -86,7 +99,23 @@ namespace Tracking
 
             Console.WriteLine(currentButton);
 
-            Console.WriteLine(image.Size);
+
+
+            using (Graphics g = Graphics.FromImage(image))
+            {
+                foreach (ScreenButton s in screenButtons)
+                {
+                    Pen p = new Pen(Color.Black);
+
+                    Rectangle destRect = new Rectangle(s.location, s.size);
+                    Rectangle srcRect = new Rectangle(0, 0, s.image.image.Width, s.image.image.Height);
+
+
+                    g.DrawImage(s.image.image, destRect, srcRect, GraphicsUnit.Pixel);
+
+                    g.DrawRectangle(p, destRect);
+                }
+            }
         }
 
 
@@ -101,48 +130,73 @@ namespace Tracking
 
         private String GetButton(System.Drawing.Point location)
         {
-            int x = location.X;
-            int y = location.Y;
+            for (int i = 0; i < screenButtons.Count; i++)
+            {
+                if (screenButtons[i].IsIn(location))
+                {
+                    return screenButtons[i].image.value;
+                }
+            }
 
-            if (isBetween(x, 0, 300) && isBetween(y, 0, 342))
-            {
-                return "Left";
-            }
-            else if (isBetween(x, 300, 600) && isBetween(y, 0, 342))
-            {
-                return "Right";
-            }
-            else if (isBetween(x, 600, 900) && isBetween(y, 0, 342))
-            {
-                return "B";
-            }
-            else if (isBetween(x, 0, 300) && isBetween(y, 342, 720))
-            {
-                return "Up";
-            }
-            else if (isBetween(x, 300, 600) && isBetween(y, 342, 720))
-            {
-                return "Down";
-            }
-            else if (isBetween(x, 600, 900) && isBetween(y, 342, 720))
-            {
-                return "A";
-            }
-            else if (isBetween(x, 900, 1280) && isBetween(y, 342, 533))
-            {
-                return "Start";
-            }
-            else if (isBetween(x, 900, 1280) && isBetween(y, 533, 720))
-            {
-                return "Select";
-            }
-            else
-            {
-                return "WAIT";
-            }
+            return "WAIT";
         }
 
 
+
+        private void LoadImages()
+        {
+            try
+            {
+                imgA = new Bitmap(System.Drawing.Image.FromFile(@"..\..\..\..\..\pictures\a.png"));
+                imgB = new Bitmap(System.Drawing.Image.FromFile(@"..\..\..\..\..\pictures\b.png"));
+                imgDown = new Bitmap(System.Drawing.Image.FromFile(@"..\..\..\..\..\pictures\down.png"));
+                imgLeft = new Bitmap(System.Drawing.Image.FromFile(@"..\..\..\..\..\pictures\left.png"));
+                imgRight = new Bitmap(System.Drawing.Image.FromFile(@"..\..\..\..\..\pictures\right.png"));
+                imgSelect = new Bitmap(System.Drawing.Image.FromFile(@"..\..\..\..\..\pictures\select.png"));
+                imgStart = new Bitmap(System.Drawing.Image.FromFile(@"..\..\..\..\..\pictures\start.png"));
+                imgUp = new Bitmap(System.Drawing.Image.FromFile(@"..\..\..\..\..\pictures\up.png"));
+
+                screenImages.Add(new ScreenImage(imgA, "A"));
+                screenImages.Add(new ScreenImage(imgB, "B"));
+                screenImages.Add(new ScreenImage(imgDown, "Down"));
+                screenImages.Add(new ScreenImage(imgLeft, "Left"));
+                screenImages.Add(new ScreenImage(imgRight, "Right"));
+                screenImages.Add(new ScreenImage(imgUp, "Up"));
+                screenImages.Add(new ScreenImage(imgStart, "Start", true));
+                screenImages.Add(new ScreenImage(imgSelect, "Select", true));
+
+                List<ScreenImage> images = new List<ScreenImage>();
+
+                for (int i = 0; i < screenImages.Count; i++)
+                {
+                    images.Add(new ScreenImage(screenImages[i].image, screenImages[i].value));
+                }
+
+                screenButtons.Add(new ScreenButton(new System.Drawing.Point(0, 0), new Size(320, 360)));
+                screenButtons.Add(new ScreenButton(new System.Drawing.Point(320, 0), new Size(320, 360)));
+                screenButtons.Add(new ScreenButton(new System.Drawing.Point(320 * 2, 0), new Size(320, 360)));
+                screenButtons.Add(new ScreenButton(new System.Drawing.Point(0, 360), new Size(320, 360)));
+                screenButtons.Add(new ScreenButton(new System.Drawing.Point(320, 360), new Size(320, 360)));
+                screenButtons.Add(new ScreenButton(new System.Drawing.Point(320 * 2, 360), new Size(320, 360)));
+                ScreenButton start = new ScreenButton(new System.Drawing.Point(320 * 3, 360), new Size(320, 180));
+                ScreenButton select = new ScreenButton(new System.Drawing.Point(320 * 3, 540), new Size(320, 180));
+                start.canRandomize = false;
+                select.canRandomize = false;
+                screenButtons.Add(start);
+                screenButtons.Add(select);
+
+
+
+                for (int i = 0; i < screenButtons.Count; i++)
+                {
+                    screenButtons[i].SetImage(images[i]);
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
 
         private void Setup()
         {
@@ -170,11 +224,6 @@ namespace Tracking
             greenUpper.Value = gU;
             blueLower.Value = bL;
             blueUpper.Value = bU;
-        }
-
-        private bool isBetween(int value, int lower, int upper)
-        {
-            return (value >= lower && value < upper);
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -215,6 +264,8 @@ namespace Tracking
             bU = (int)blueUpper.Value;
         }
 
+
+
         private void writeInterval_ValueChanged(object sender, EventArgs e)
         {
             writeTimer.Interval = (int)writeInterval.Value;
@@ -225,6 +276,36 @@ namespace Tracking
             WriteToFile(currentButton);
 
             Console.WriteLine("Wrote " + currentButton + " to file!");
+        }
+
+        private void randomizeTime_ValueChanged(object sender, EventArgs e)
+        {
+            randomizerTimer.Interval = (int)randomizeTime.Value;
+        }
+
+        private void randomizerTimer_Tick(object sender, EventArgs e)
+        {
+            List<ScreenImage> images = new List<ScreenImage>();
+
+            for (int i = 0; i < screenImages.Count; i++)
+            {
+                if (!screenImages[i].lockedInPlace)
+                {
+                    images.Add(new ScreenImage(screenImages[i].image, screenImages[i].value));
+                }
+            }
+
+
+
+            screenButtons = screenButtons.OrderBy(a => Guid.NewGuid()).ToList();
+
+            foreach (ScreenButton s in screenButtons)
+            {
+                if (s.canRandomize)
+                {
+                    s.randomizeImage(images);
+                }
+            }
         }
     }
 }
