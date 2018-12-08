@@ -17,14 +17,21 @@ namespace Tracking
 {
     public partial class Form1 : Form
     {
-        private int rL = 230;
+        private int rL = 220;
         private int rU = 255;
         private int gL = 0;
-        private int gU = 250;
+        private int gU = 220;
         private int bL = 0;
-        private int bU = 250;
+        private int bU = 220;
 
         private int brightnessCorrection = 0;
+
+        private int currentTime = 0;
+
+        private Rectangle clockPosition = new Rectangle(10, 10, 25, 25);
+        private Pen clockPen = new Pen(Color.Red, 5f);
+        private Font clockTextFont = new Font("Arial", 10f);
+        private Brush clockTextBrush = new SolidBrush(Color.Red);
 
         private Bitmap imgA;
         private Bitmap imgB;
@@ -110,18 +117,23 @@ namespace Tracking
 
             using (Graphics g = Graphics.FromImage(image))
             {
-                foreach (ScreenButton s in screenButtons)
+                using (Pen p = new Pen(Color.Black))
                 {
-                    Pen p = new Pen(Color.Black);
 
-                    Rectangle destRect = new Rectangle(s.location, s.size);
-                    Rectangle srcRect = new Rectangle(0, 0, s.image.image.Width, s.image.image.Height);
+                    foreach (ScreenButton s in screenButtons)
+                    {
+                        Rectangle destRect = new Rectangle(s.location, s.size);
+                        Rectangle srcRect = new Rectangle(0, 0, s.image.image.Width, s.image.image.Height);
 
 
-                    g.DrawImage(s.image.image, destRect, srcRect, GraphicsUnit.Pixel);
+                        g.DrawImage(s.image.image, destRect, srcRect, GraphicsUnit.Pixel);
 
-                    g.DrawRectangle(p, destRect);
+                        g.DrawRectangle(p, destRect);
+                    }
                 }
+
+                g.DrawArc(clockPen, clockPosition, -90, 360f * ((float)currentTime / randomizerTimer.Interval));
+                g.DrawString("Randomize\nTimer", clockTextFont, clockTextBrush, 45, 10);
             }
         }
 
@@ -288,13 +300,13 @@ namespace Tracking
 
         private void randomizeTime_ValueChanged(object sender, EventArgs e)
         {
+            currentTime = 0;
             randomizerTimer.Interval = (int)randomizeTime.Value;
         }
 
         private void randomizerTimer_Tick(object sender, EventArgs e)
         {
-            clockTimer.Stop();
-            clockTimer.Start();
+            currentTime = 0;
 
             List<ScreenImage> images = new List<ScreenImage>();
 
@@ -326,7 +338,8 @@ namespace Tracking
 
         private void clockTimer_Tick(object sender, EventArgs e)
         {
-
+            currentTime += clockTimer.Interval;
+            Console.WriteLine(currentTime);
         }
     }
 }

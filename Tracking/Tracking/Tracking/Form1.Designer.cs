@@ -152,7 +152,7 @@
             this.blobHeight.Size = new System.Drawing.Size(50, 20);
             this.blobHeight.TabIndex = 8;
             this.blobHeight.Value = new decimal(new int[] {
-            25,
+            30,
             0,
             0,
             0});
@@ -164,7 +164,7 @@
             this.blobWidth.Size = new System.Drawing.Size(50, 20);
             this.blobWidth.TabIndex = 7;
             this.blobWidth.Value = new decimal(new int[] {
-            25,
+            30,
             0,
             0,
             0});
@@ -248,7 +248,6 @@
             // clockTimer
             // 
             this.clockTimer.Enabled = true;
-            this.clockTimer.Interval = 1;
             this.clockTimer.Tick += new System.EventHandler(this.clockTimer_Tick);
             // 
             // Form1
